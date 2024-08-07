@@ -1,4 +1,10 @@
 def binario(numero : int): 
+    if numero < 0: 
+        print('Disculpa, pero solo aceptamos números naturales enteros (ﾉ*ФωФ)ﾉ')
+        return
+    if numero == 1 or numero == 0: 
+        print(numero)
+        return
     binario = ''
     while numero // 2 != 1: 
         binario = f'{numero % 2}{binario}'
@@ -7,8 +13,11 @@ def binario(numero : int):
     print(binario)
 
 def main(): 
-    numero = int(input('Inserte el número decimal que desea convertir: '))
-    binario(numero)
+    try: 
+        numero = int(input('Inserte el número decimal natural entero que desea convertir: '))
+        binario(numero)
+    except: 
+        print('Disculpa, pero solo aceptamos números (´。＿。｀)')
 
 if __name__ == '__main__': 
     main()
